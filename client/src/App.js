@@ -4,7 +4,8 @@ import io from "socket.io-client";
 import { useState, useEffect } from "react";
 import axios from "axios";
 //Conexión para escuchar y enviar eventos
-const socket = io("http://localhost:3001");
+// const socket = io("http://localhost:3001");
+const socket = io("https://chatrealcarolina-production.up.railway.app/");
 
 function App() {
   const [nickname, setNickname] = useState("");
@@ -15,7 +16,7 @@ function App() {
   const [storedMessages, setStoredMessages] = useState([]);
   const [firstTime, setfirstTime] = useState(false);
 
-  const url = "http://localhost:3001/api/";
+  const url = "https://chatrealcarolina-production.up.railway.app/api/";
 
   useEffect(() => {
     const receivedMessage = (message) => {
